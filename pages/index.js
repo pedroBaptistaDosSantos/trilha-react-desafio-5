@@ -9,6 +9,7 @@ import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
 export default function Index({ posts, globalData }) {
+  
   return (
     <Layout>
       <SEO title={globalData.name} description={globalData.blogTitle} />
@@ -60,7 +61,9 @@ export default function Index({ posts, globalData }) {
 }
 
 export async function getServerSideProps() {
-  const posts = await getPosts();
+  const posts = await getPosts()
+  console.log('buscando posts')
+  console.log('posts: '+ posts)
   const globalData = getGlobalData()
 
 
